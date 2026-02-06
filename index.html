@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>BatakTranslate | Portal Edukasi Aksara Batak</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+    body { margin: 0; background: #f2f2f2; }
+
+    /* ===== TOP BAR (ALA DETIKCOM) ===== */
+    .topbar {
+      background: #0c2c84;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .logo span { color: #ffcc00; }
+
+    .menu a {
+      color: #fff;
+      margin-left: 15px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    /* ===== MAIN LAYOUT ===== */
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      padding: 0 15px;
+    }
+
+    /* ===== CONTENT ===== */
+    .content {
+      background: #fff;
+      border-radius: 6px;
+      padding: 20px;
+    }
+
+    .headline {
+      border-bottom: 2px solid #eee;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+    }
+
+    .headline h1 {
+      margin: 0;
+      font-size: 26px;
+      color: #222;
+    }
+
+    .headline p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    /* ===== TRANSLATOR ===== */
+    .translator {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .box label {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 150px;
+      margin-top: 8px;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      resize: none;
+    }
+
+    .actions {
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    button {
+      background: #0c2c84;
+      color: #fff;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    button:hover { background: #061a4d; }
+
+    /* ===== SIDEBAR ===== */
+    .sidebar {
+      background: #fff;
+      border-radius: 6px;
+      padding: 20px;
+    }
+
+    .sidebar h3 {
+      margin-top: 0;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 8px;
+    }
+
+    .sidebar p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #0c2c84;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 13px;
+      margin-top: 30px;
+    }
+
+    @media(max-width: 768px) {
+      .container { grid-template-columns: 1fr; }
+      .translator { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="logo">Batak<span>Translate</span></div>
+  <div class="menu">
+    <a href="#">Home</a>
+    <a href="#">Budaya</a>
+    <a href="#">Aksara</a>
+    <a href="#">Translator</a>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="container">
+
+  <!-- CONTENT -->
+  <div class="content">
+    <div class="headline">
+      <h1>Translator Bahasa Indonesia ke Aksara Batak</h1>
+      <p>Portal edukasi digital untuk pelestarian budaya Batak Toba</p>
+    </div>
+
+    <div class="translator">
+      <div class="box">
+        <label>Bahasa Indonesia</label>
+        <textarea id="inputText" placeholder="Contoh: saya pergi ke rumah"></textarea>
+      </div>
+
+      <div class="box">
+        <label>Hasil Terjemahan (Aksara Batak + Latin)</label>
+        <textarea id="outputText" readonly></textarea>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button onclick="translateText()">Terjemahkan</button>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h3>Aksara Batak Toba</h3>
+    <img src="https://th.bing.com/th/id/R.ffb5d67e706181b8912b96d7081ced5c?rik=0mPotqC%2bWTJzYw&riu=http%3a%2f%2f4.bp.blogspot.com%2f-KIFR_ecsIvA%2fUJjs80LjiRI%2fAAAAAAAAANg%2fnuzsbpDRkEk%2fs1600%2fbataktoba1.jpg&ehk=SuVjI015v1CGF6vX3VWRbuJxFastzWK%2fYTF9qNIeN54%3d&risl=&pid=ImgRaw&r=0" alt="Aksara Batak" style="width:100%;border-radius:6px;margin-bottom:10px;">
+    <p><strong>Aksara Batak</strong> merupakan sistem tulisan tradisional masyarakat Batak yang digunakan untuk menulis bahasa Batak Toba.</p>
+
+    <h3>Cara Menggunakan Translator</h3>
+    <ol style="font-size:14px;color:#555;padding-left:18px;">
+      <li>Ketik kalimat Bahasa Indonesia pada kolom input.</li>
+      <li>Klik tombol <strong>Terjemahkan</strong>.</li>
+      <li>Sistem akan menampilkan hasil dalam bentuk <em>Latin Batak</em> dan <em>Aksara Batak</em>.</li>
+    </ol>
+
+    <p>Fitur ini bertujuan membantu pengguna mengenal bentuk dan cara membaca aksara Batak secara digital.</p>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 BatakTranslate | Media Edukasi Budaya Nusantara
+</footer>
+
+<script>
+const kamus = {
+  "saya": "ahu",
+  "aku": "ahu",
+  "kamu": "ho",
+  "dia": "ibana",
+  "pergi": "laho",
+  "ke": "tu",
+  "rumah": "jabu",
+  "makan": "mangan",
+  "minum": "inum",
+  "dan": "do"
+};
+
+const aksara = {
+  "a":"ᯀ","ha":"ᯂ","ka":"ᯃ","ba":"ᯅ","pa":"ᯇ",
+  "na":"ᯉ","ma":"ᯋ","ta":"ᯖ","sa":"ᯘ","la":"ᯞ",
+  "ra":"ᯒ","ga":"ᯎ","ja":"ᯐ","ya":"ᯛ",
+  "hu":"ᯂᯮ","ho":"ᯂᯬ","tu":"ᯖᯮ","bu":"ᯅᯮ","nga":"ᯝ"
+};
+
+function latinToAksara(text){
+  let result="";
+  let i=0;
+  while(i<text.length){
+    let two=text.substring(i,i+2);
+    if(aksara[two]){ result+=aksara[two]; i+=2; }
+    else if(aksara[text[i]]){ result+=aksara[text[i]]; i++; }
+    else{ i++; }
+  }
+  return result;
+}
+
+function translateText(){
+  const input=document.getElementById("inputText").value.toLowerCase();
+  const words=input.split(" ");
+  let output=[];
+
+  words.forEach(w=>{
+    let latin=kamus[w]||w;
+    let aks=latinToAksara(latin);
+    output.push(aks+" ("+latin+")");
+  });
+
+  document.getElementById("outputText").value=output.join(" ");
+}
+</script>
+
+</body>
+</html>
